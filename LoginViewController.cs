@@ -31,7 +31,7 @@ namespace iOSExampleApplication
 			}
 			else
 			{
-				ShowErrorMessage("Username o password non validi.");			
+				ShowErrorMessage("Username or password incorrect");			
 			}
 		}
 		
@@ -52,7 +52,7 @@ namespace iOSExampleApplication
 		
 		private void ShowErrorMessage(string message)
 		{
-			var alertController = UIAlertController.Create("Errore", message, UIAlertControllerStyle.Alert);
+			var alertController = UIAlertController.Create("Error", message, UIAlertControllerStyle.Alert);
 			alertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
 			PresentViewController(alertController, true, null);
 		}

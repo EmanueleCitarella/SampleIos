@@ -15,10 +15,24 @@ namespace iOSExampleApplication
 		{
 		}
 
-		public override void ViewDidAppear(bool animated)
+		public override void ViewDidLoad()
 		{
-			base.ViewDidAppear(animated);
-			// username.Text = _usernameDashboard;
+			keyboardBtn.Layer.CornerRadius = 12;
+			keyboardBtn.Layer.BorderWidth = 1; 
+			keyboardBtn.Layer.BorderColor = UIColor.Blue.CGColor;
 		}
+		
+		public override void ViewWillAppear(bool animated)
+		{
+			var usernameLabel = new UILabel
+			{
+				Frame = new CGRect(16, 105, 300, 40),
+				Text = _usernameDashboard,
+				TextColor = UIColor.Black
+			};
+
+			View.AddSubview(usernameLabel);
+		}
+		
 	}
 }

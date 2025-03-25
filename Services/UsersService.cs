@@ -25,6 +25,7 @@ public class UsersService
         var userFound = usersList.Find(x => x.username == userToSearch.username);
         if (userFound != null && userFound.password == userToSearch.password)
         {
+            _currentUser = userFound.username;
             return userFound as User;
         }
         else

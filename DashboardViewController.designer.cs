@@ -14,10 +14,18 @@ namespace iOSExampleApplication
 	partial class DashboardViewController
 	{
 		[Outlet]
+		UIKit.UIButton keyboardBtn { get; set; }
+
+		[Outlet]
 		UIKit.UILabel username { get; set; }
 
 		void ReleaseDesignerOutlets ()
 		{
+			if (keyboardBtn != null) {
+				keyboardBtn.Dispose ();
+				keyboardBtn = null;
+			}
+
 			if (username != null) {
 				username.Dispose ();
 				username = null;
