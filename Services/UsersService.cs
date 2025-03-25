@@ -36,7 +36,7 @@ public class UsersService
     
     public string GetCurrentUser()
     {
-        return _currentUser;
+        return _currentUser ?? usersList[0].username;
     }
 
     public void Logout()
